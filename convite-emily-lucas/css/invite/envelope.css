@@ -1,0 +1,184 @@
+/* Palco, envelope, forro e transição convite → site. */
+/* =========================================================
+   3. BUQUÊS DOS CANTOS (uma imagem, espelhada)
+   ========================================================= */
+.corner{
+  position:fixed;z-index:1;pointer-events:none;
+  width:clamp(150px,36vmin,400px);aspect-ratio:1;
+}
+.corner .corner-in{position:absolute;inset:0;transform-origin:0 0}
+.corner .art{inset:0}
+.corner .wash{width:78%;height:70%;left:4%;top:4%;--wb:14px;--wo:.7;
+  background:
+    radial-gradient(closest-side at 40% 45%,rgba(240,213,216,.9),transparent),
+    radial-gradient(closest-side at 70% 30%,rgba(159,179,207,.7),transparent),
+    radial-gradient(closest-side at 25% 75%,rgba(111,143,94,.28),transparent);}
+.c-tl{top:-1.5vmin;left:-1.5vmin}
+.c-tr{top:-1.5vmin;right:-1.5vmin;transform:scale(-1,1)}
+.c-bl{bottom:-1.5vmin;left:-1.5vmin;transform:scale(1,-1)}
+.c-br{bottom:-1.5vmin;right:-1.5vmin;transform:scale(-1,-1)}
+
+/* =========================================================
+   4. PALCO + CABEÇALHO
+   ========================================================= */
+.stage{
+  position:relative;z-index:5;
+  min-height:100vh;min-height:100svh;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:clamp(14px,2.6vh,28px);
+  padding:clamp(24px,5vh,56px) 16px;
+  /* largura do envelope: tudo nele é derivado de --ew */
+  --ew:clamp(250px, min(88vw, 520px, (100vh - 300px) * 1.35), 520px);
+  --ew:clamp(250px, min(88vw, 520px, (100svh - 300px) * 1.35), 520px);
+}
+.intro{text-align:center;line-height:1}
+.intro .kicker{text-transform:uppercase;
+  font-family:var(--f-caps);font-weight:500;
+  font-size:clamp(11px,1.2vw + 6px,15px);
+  letter-spacing:.34em;margin:0 0 .6em;padding-left:.34em;color:var(--sage-d);
+}
+.intro .names{
+  font-family:var(--f-script);font-weight:400;
+  font-size:clamp(42px,6vw + 18px,78px);
+  margin:0;color:#2f4636;line-height:1.05;
+}
+.intro .names span{font-size:.72em;color:var(--sage);margin:0 .06em}
+.intro .ornament{position:relative;width:clamp(56px,7vw,80px);aspect-ratio:1.8;margin:.5em auto 0}
+.intro .ornament .art{inset:0}
+.intro .ornament .rings-css{left:18%;width:64%;top:6%}
+.intro .ornament::before,.intro .ornament::after{
+  content:"";position:absolute;top:50%;width:70%;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(111,143,94,.55));
+}
+.intro .ornament::before{right:108%}
+.intro .ornament::after{left:108%;transform:scaleX(-1)}
+
+.hint{text-transform:uppercase;
+  margin:0;font-family:var(--f-caps);font-weight:500;
+  font-size:clamp(11px,.8vw + 8px,14px);
+  letter-spacing:.38em;padding-left:.38em;color:var(--sage-d);
+  min-height:1.4em;
+}
+.hint span{display:inline-block}
+
+/* =========================================================
+   5. ENVELOPE (só CSS: clip-path + gradientes + sombras)
+   ========================================================= */
+.env-wrap{
+  position:relative;cursor:pointer;outline:none;
+  width:var(--ew);aspect-ratio:1.35;
+  transition:transform .5s var(--ease-soft);
+}
+.env-wrap.is-ready:hover,.env-wrap.is-ready:focus-visible{transform:translateY(-4px)}
+.env-wrap:focus-visible .envelope{outline:2px dashed rgba(111,143,94,.5);outline-offset:10px;border-radius:6px}
+.env-wrap.is-busy{cursor:default}
+
+.envelope{
+  position:absolute;inset:0;
+  perspective:calc(var(--ew) * 2.4);
+  perspective-origin:50% 0;
+}
+.envelope > *{position:absolute}
+
+/* Fundo interno (com forro estampado, visível quando a aba abre) */
+.liner-pattern{
+  font-size:calc(var(--ew) * .018);
+  background-color:var(--blue);
+  background-image:
+    url("../../assets/img/convite/forro-lirios.webp"),
+    /* lírio estilizado (3 pétalas) */
+    radial-gradient(ellipse .18em .6em at 4.5em 1.1em,rgba(255,255,255,.85) 62%,transparent 68%),
+    radial-gradient(ellipse .55em .17em at 4.05em 1.55em,rgba(255,255,255,.8) 62%,transparent 68%),
+    radial-gradient(ellipse .55em .17em at 4.95em 1.55em,rgba(255,255,255,.8) 62%,transparent 68%),
+    radial-gradient(ellipse .12em .5em at 4.5em 2.2em,rgba(111,143,94,.7) 60%,transparent 66%),
+    /* alianças entrelaçadas */
+    radial-gradient(circle at 1.25em 4.5em,transparent .3em,var(--gold) .32em .4em,transparent .43em),
+    radial-gradient(circle at 1.75em 4.6em,transparent .3em,var(--gold) .32em .4em,transparent .43em),
+    /* miosótis */
+    radial-gradient(circle at 4.5em 4.5em,#f1d27a 0 .07em,rgba(255,255,255,.9) .08em .22em,transparent .24em),
+    radial-gradient(circle at 1.5em 1.5em,rgba(255,255,255,.7) 0 .12em,transparent .14em),
+    /* trama do papel */
+    repeating-linear-gradient(45deg,rgba(255,255,255,.06) 0 2px,transparent 2px 6px);
+  background-size:auto,6em 6em,6em 6em,6em 6em,6em 6em,6em 6em,6em 6em,6em 6em,3em 3em,auto;
+  background-repeat:repeat;
+}
+.env-back{
+  inset:0;border-radius:calc(var(--ew) * .008);
+  box-shadow:0 calc(var(--ew)*.04) calc(var(--ew)*.08) rgba(70,60,40,.2), 0 1px 2px rgba(70,60,40,.15);
+  z-index:0;
+}
+.env-back::after{ /* sombra de profundidade dentro do envelope */
+  content:"";position:absolute;inset:0;border-radius:inherit;
+  background:linear-gradient(180deg,rgba(40,50,70,.28),rgba(40,50,70,.05) 45%,transparent 60%);
+}
+
+/* Bolso: overflow hidden recorta o cartão enquanto ele está dentro */
+.pocket{left:0;right:0;bottom:0;top:calc(var(--ew) * -1.3);overflow:hidden;z-index:3;pointer-events:none}
+
+/* Painéis frontais: wrapper com drop-shadow + filho recortado com clip-path */
+.fp{inset:0;z-index:4;filter:drop-shadow(0 -.5px 0 rgba(255,255,255,.7)) drop-shadow(0 1px 1.5px rgba(70,62,48,.22))}
+.fp i{position:absolute;inset:0;display:block;background-image:var(--grain);background-size:180px}
+.fp-left i{
+  clip-path:polygon(0 0,52% 55%,0 100%);
+  background-color:var(--env);
+  background-image:var(--grain),linear-gradient(90deg,#e4e2dc,#efeee9 70%,#e8e6e0);
+}
+.fp-right i{
+  clip-path:polygon(100% 0,100% 100%,48% 55%);
+  background-color:var(--env);
+  background-image:var(--grain),linear-gradient(270deg,#e2e0da,#eeede8 70%,#e7e5df);
+}
+.fp-bottom i{
+  clip-path:polygon(0 100%,2% 97%,50% 46%,98% 97%,100% 100%);
+  background-color:var(--env);
+  background-image:var(--grain),linear-gradient(0deg,#e3e1db,#f0efea 75%,#e9e7e1);
+}
+
+/* Aba superior: 3D com duas faces */
+.flap-shadow{inset:0;z-index:7;filter:blur(calc(var(--ew)*.006));pointer-events:none}
+.flap-shadow i{position:absolute;inset:0;display:block;transform:translateY(calc(var(--ew)*.008));
+  clip-path:polygon(0 0,100% 0,50% 60%);background:rgba(60,52,40,.28)}
+.flap{
+  inset:0;z-index:8;
+  transform-origin:50% 0;transform-style:preserve-3d;
+}
+.flap .face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden}
+.flap .outer{
+  clip-path:polygon(0 0,100% 0,50% 58%);
+  background-color:var(--env);
+  background-image:var(--grain),linear-gradient(180deg,#f3f2ee,#e9e7e2 55%,#e1dfd8);
+}
+.flap .inner{
+  transform:rotateX(180deg);
+  clip-path:polygon(0 100%,100% 100%,50% 42%);
+  background-color:#ecebe6;background-image:var(--grain);
+}
+.flap .liner{position:absolute;inset:0;clip-path:polygon(6% 97%,94% 97%,50% 47.5%)}
+.flap .inner::after{ /* sombreado da dobra */
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(0deg,rgba(40,50,70,.2),transparent 30%);
+}
+
+/* Textos do envelope */
+.env-to,.env-names{left:0;right:0;margin:0;text-align:center;z-index:6;pointer-events:none}
+.env-to{top:73%;font-family:var(--f-text);font-style:italic;font-weight:500;font-size:calc(var(--ew)*.05);color:var(--ink-soft)}
+.env-names{text-transform:uppercase;top:87%;font-family:var(--f-caps);font-weight:500;font-size:calc(var(--ew)*.024);letter-spacing:.28em;padding-left:.28em;color:var(--sage-d)}
+
+/* =========================================================
+   8. CAMADAS: CONVITE (overlay) → SITE (scroll)
+   ========================================================= */
+html.lock,html.lock body{overflow:hidden}
+.invite{position:fixed;inset:0;z-index:10;overflow-x:hidden;overflow-y:auto;background:var(--cream)}
+.invite::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+  background:radial-gradient(120% 90% at 50% 45%,transparent 55%,rgba(150,130,90,.12) 100%)}
+.invite.revealing{
+  --r:0vmax;
+  -webkit-mask:radial-gradient(circle at 50% 50%,transparent calc(var(--r) - 9vmax),#000 var(--r));
+          mask:radial-gradient(circle at 50% 50%,transparent calc(var(--r) - 9vmax),#000 var(--r));
+}
+.reveal-ring{
+  position:fixed;left:50%;top:50%;width:0;height:0;translate:-50% -50%;z-index:12;border-radius:50%;
+  pointer-events:none;visibility:hidden;opacity:0;mix-blend-mode:multiply;filter:blur(10px);
+  background:radial-gradient(closest-side,transparent 80%,rgba(240,213,216,.8) 89%,rgba(159,179,207,.6) 95%,transparent 100%);
+}
+.petals{z-index:55}

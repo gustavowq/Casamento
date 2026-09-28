@@ -1,0 +1,35 @@
+/* Normalização e acabamento global. */
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0;height:100%}
+body{
+  background:var(--cream);
+  color:var(--ink);
+  font-family:var(--f-text);
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+  -webkit-tap-highlight-color:transparent;
+}
+img{display:block;max-width:100%}
+
+/* Textura de papel granulado sobre a página inteira */
+.paper-grain{
+  position:fixed;inset:0;pointer-events:none;z-index:50;
+  background-image:var(--grain);
+  background-size:180px 180px;
+  mix-blend-mode:multiply;opacity:.55;
+}
+/* vinheta suave */
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+  background:radial-gradient(120% 90% at 50% 45%, transparent 55%, rgba(150,130,90,.12) 100%);
+}
+
+/* utilitários */
+.toast{position:fixed;left:50%;top:86px;z-index:60;translate:-50% 0;max-width:calc(100vw - 32px);padding:14px 24px;border-radius:999px;
+  background:#2f4636;color:#f6f1e6;font-size:17px;text-align:center;box-shadow:0 20px 40px -16px rgba(20,30,20,.6);visibility:hidden;opacity:0}
+.aura{position:fixed;left:0;top:0;z-index:3;width:280px;height:280px;margin:-140px 0 0 -140px;border-radius:50%;pointer-events:none;opacity:0;
+  background:radial-gradient(closest-side,rgba(240,213,216,.5),rgba(159,179,207,.16) 60%,transparent);mix-blend-mode:multiply;transition:opacity .8s}
+@media (prefers-reduced-motion:reduce){
+  .flip-in,.rsvp-in,.sw-in,.g-tilt{transition-duration:.01s!important}
+  .hp .petal,.scroll-cue i::after{animation:none}
+}

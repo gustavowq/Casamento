@@ -1,0 +1,93 @@
+/* Ilustrações CSS usadas enquanto imagens finais estiverem ausentes. */
+/* =========================================================
+   2. ILUSTRAÇÕES (caixas de arte + fallback em CSS)
+   ========================================================= */
+.art{position:absolute}
+.art > img{width:100%;height:100%;object-fit:contain;opacity:0;transition:opacity .4s}
+.art.ok > img{opacity:1}
+.art.missing > img{display:none}
+.art > .fb{position:absolute;inset:0;display:none}
+.art.missing > .fb{display:block}
+
+/* Aquarela: manchas translúcidas com borda "pigmentada" */
+.wash{
+  position:absolute;pointer-events:none;
+  mix-blend-mode:multiply;
+  filter:blur(var(--wb,10px));
+  opacity:var(--wo,.75);
+  border-radius:47% 53% 44% 56% / 55% 42% 58% 45%;
+}
+.wash::after{ /* anel de pigmento que se acumula na borda */
+  content:"";position:absolute;inset:6%;
+  border-radius:inherit;
+  background:radial-gradient(closest-side, transparent 72%, var(--wr,rgba(159,179,207,.35)) 88%, transparent 100%);
+  filter:blur(2px);
+}
+
+/* Blocos de fallback desenhados em CSS (usados só se o PNG/WebP faltar) */
+.cl{position:absolute;aspect-ratio:1;transform-origin:0 100%}
+.cl i{position:absolute;display:block}
+.leaf{
+  left:0;bottom:0;aspect-ratio:5.6/1;transform-origin:0 50%;
+  border-radius:0 100% 0 100% / 0 100% 0 100%;
+  background:linear-gradient(170deg,#8fab7c,var(--sage) 45%,#5b7a4c);
+  opacity:.92;
+}
+.leaf::after{content:"";position:absolute;left:4%;right:10%;top:50%;height:1px;background:rgba(255,255,255,.35);transform:translateY(-50%)}
+.stem{left:0;bottom:0;height:1.1%;min-height:1px;transform-origin:0 50%;background:#6d8a5b;border-radius:2px}
+.lily{aspect-ratio:1;translate:-50% -50%}
+.lily .p{
+  left:50%;top:50%;width:52%;aspect-ratio:3/1;transform-origin:0 50%;
+  border-radius:0 100% 0 100% / 0 100% 0 100%;
+  background:
+    radial-gradient(circle,#e3a3ae 0 .9px,transparent 1.4px) 30% 40%/7px 5px,
+    linear-gradient(95deg,#efe9df,#fff 45%,#f7f1ee);
+  box-shadow:inset 0 0 0 .5px rgba(111,143,94,.25);
+}
+.lily .p::before{content:"";position:absolute;left:8%;right:14%;top:50%;height:1px;background:rgba(111,143,94,.35)}
+.lily .st{left:50%;top:50%;width:30%;height:1px;transform-origin:0 50%;background:#b7c49c}
+.lily .st::after{content:"";position:absolute;right:-2px;top:-2px;width:5px;height:3px;border-radius:50%;background:#9a4f2a}
+.bud{
+  aspect-ratio:1/3.2;translate:-50% -50%;
+  border-radius:50% 50% 45% 45% / 70% 70% 30% 30%;
+  background:linear-gradient(90deg,#e6ecd9,#fff 45%,#dfe7cf);
+  box-shadow:inset 0 0 0 .5px rgba(111,143,94,.3);
+}
+.fmn{
+  aspect-ratio:1;translate:-50% -50%;border-radius:50%;
+  background:radial-gradient(circle,#f1d27a 0 16%,#fff 18% 24%,var(--blue) 26% 66%,transparent 70%);
+  box-shadow:0 0 0 .5px rgba(111,135,171,.25);
+}
+.dove i{background:linear-gradient(170deg,#fff,#e8ebee)}
+.dove{position:absolute;aspect-ratio:1.5}
+.dove .b{left:20%;top:38%;width:56%;height:36%;border-radius:60% 40% 45% 55% / 60% 55% 45% 40%}
+.dove .h{left:66%;top:22%;width:20%;height:30%;border-radius:50%}
+.dove .k{left:84.5%;top:33%;width:7%;height:7%;background:#c9a58a;clip-path:polygon(0 0,100% 50%,0 100%)}
+.dove .w{left:18%;top:20%;width:46%;height:34%;border-radius:100% 0 100% 0;rotate:-14deg;background:linear-gradient(160deg,#fff,#dde3ea)}
+.dove .t{left:2%;top:48%;width:26%;height:18%;border-radius:40% 0 0 40%;rotate:8deg}
+.dove .e{left:77%;top:31%;width:3%;height:4.5%;border-radius:50%;background:#394049}
+.dove i{position:absolute;box-shadow:0 0 0 .5px rgba(90,100,110,.18)}
+
+/* Alianças em CSS (dourado envelhecido) */
+.rings-css{position:absolute;aspect-ratio:1.55}
+.rings-css i{
+  position:absolute;top:8%;width:64%;aspect-ratio:1;border-radius:50%;
+  background:conic-gradient(from 20deg,#dccb95,#9c8550,#e8dcae,#8b7644,#d4c28a,#a38c56,#dccb95);
+  -webkit-mask:radial-gradient(closest-side,transparent 80%,#000 83% 97%,transparent 100%);
+          mask:radial-gradient(closest-side,transparent 80%,#000 83% 97%,transparent 100%);
+  filter:drop-shadow(0 1px 1px rgba(90,70,30,.25));
+}
+.rings-css i:first-child{left:0}
+.rings-css i:last-child{right:0;top:28%}
+
+/* Laço de cetim em CSS */
+.bow{position:absolute;aspect-ratio:1.6}
+.bow i{position:absolute;display:block}
+.bow .lp{top:18%;width:42%;height:48%;border-radius:55% 45% 50% 50% / 60% 60% 40% 40%;
+  background:radial-gradient(ellipse at 70% 55%,#d8e2ee 0 25%,var(--blue) 60%,#7f97bb 100%)}
+.bow .lp.l{left:8%;rotate:-18deg;border-radius:45% 55% 50% 50% / 60% 60% 40% 40%}
+.bow .lp.r{right:8%;rotate:18deg}
+.bow .kn{left:43%;top:33%;width:14%;height:22%;border-radius:40%;background:linear-gradient(90deg,#7f97bb,#b9c8dc,#7f97bb)}
+.bow .tl{top:50%;width:12%;height:48%;background:linear-gradient(90deg,#8ea4c4,#c3d0e1,#8ea4c4);clip-path:polygon(0 0,100% 0,100% 100%,50% 88%,0 100%)}
+.bow .tl.l{left:38%;rotate:16deg}
+.bow .tl.r{right:38%;rotate:-16deg}

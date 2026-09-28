@@ -1,0 +1,16 @@
+/* Rodapé e selo final. */
+.footer{position:relative;overflow:clip;text-align:center;padding:clamp(120px,18vh,190px) 20px 50px;background:linear-gradient(180deg,#f2ecdf,#ece2d0)}
+.footer .f-flora{position:absolute;width:clamp(180px,28vw,380px);aspect-ratio:1;opacity:.95}
+.footer .f-flora.l{left:-2%;bottom:-3%;transform:scaleY(-1)}
+.footer .f-flora.r{right:-2%;bottom:-3%;transform:scale(-1,-1)}
+.coin-stage{position:relative;perspective:900px;display:grid;place-items:center;margin-bottom:22px}
+.coin{--s:128px;--ew:640px;position:relative;width:var(--s);height:var(--s);transform-style:preserve-3d}
+.coin .edge{position:absolute;inset:1%;border-radius:50%;background:#15361e;transform:translateZ(var(--z))}
+.coin .cf{position:absolute;inset:0;-webkit-backface-visibility:hidden;backface-visibility:hidden}
+.coin .cf .wax{display:block}
+.coin .cf.back{transform:translateZ(-9px) rotateY(180deg)}
+.coin .cf.back .wax b{font-family:var(--f-caps);font-size:calc(var(--s) * .13);letter-spacing:.08em;padding:0}
+.footer .h2{margin-top:0}
+.footer p{margin:0 0 6px;color:var(--ink-soft)}
+.hashtag{font-family:var(--f-caps);font-size:12px;letter-spacing:.3em;color:var(--sage-d)!important;margin:10px 0 34px!important}
+.foot-small{margin-top:70px!important;font-family:var(--f-caps);font-size:10px;letter-spacing:.3em;text-transform:uppercase;opacity:.7}

@@ -1,0 +1,508 @@
+<!doctype html>
+<html lang="pt-BR" class="lock">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Emily &amp; Augusto · Convite de Casamento</title>
+<meta name="description" content="Convite de casamento de Emily e Augusto — 24 de julho de 2027, Villa das Flores.">
+<meta name="theme-color" content="#f4efe3">
+
+<!-- Fontes -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Pinyon+Script&display=swap" rel="stylesheet">
+
+<!-- Pré-carregamento das ilustrações (WebP com fundo transparente) -->
+<link rel="preload" as="image" href="assets/img/convite/selo-EA.webp" type="image/webp">
+<link rel="preload" as="image" href="assets/img/convite/lirio-buque.webp" type="image/webp">
+<link rel="preload" as="image" href="assets/img/convite/ramo-lirio-pomba.webp" type="image/webp">
+<link rel="preload" as="image" href="assets/img/convite/aliancas.webp" type="image/webp">
+<link rel="preload" as="image" href="assets/img/convite/selo-postal.webp" type="image/webp">
+<link rel="preload" as="image" href="assets/img/cartao/save-the-date-emily-augusto.jpeg" type="image/jpeg">
+
+<!-- Ícones e prévia social: veja docs/imagens.md. -->
+<link rel="icon" href="assets/icons/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+<meta property="og:image" content="assets/icons/og-image.jpg">
+<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+<div class="paper-grain" aria-hidden="true"></div>
+
+<!-- =====================================================
+     CONVITE (camada fixa por cima do site)
+     ===================================================== -->
+<div class="invite" id="invite">
+
+<!-- Buquês nos cantos: a mesma imagem, espelhada -->
+<div class="corner c-tl" aria-hidden="true"><div class="corner-in"><div class="wash"></div><div class="art" data-fb="bouquet"><img data-art src="assets/img/convite/lirio-buque.webp" alt=""></div></div></div>
+<div class="corner c-tr" aria-hidden="true"><div class="corner-in"><div class="wash"></div><div class="art" data-fb="bouquet"><img data-art src="assets/img/convite/lirio-buque.webp" alt=""></div></div></div>
+<div class="corner c-bl" aria-hidden="true"><div class="corner-in"><div class="wash"></div><div class="art" data-fb="bouquet"><img data-art src="assets/img/convite/lirio-buque.webp" alt=""></div></div></div>
+<div class="corner c-br" aria-hidden="true"><div class="corner-in"><div class="wash"></div><div class="art" data-fb="bouquet"><img data-art src="assets/img/convite/lirio-buque.webp" alt=""></div></div></div>
+
+<section class="stage" aria-label="Convite">
+  <header class="intro" id="intro">
+    <p class="kicker">Convite de Casamento</p>
+    <h1 class="names">Emily <span>&amp;</span> Augusto</h1>
+    <div class="ornament" aria-hidden="true">
+      <div class="art" data-fb="rings"><img data-art src="assets/img/convite/aliancas.webp" alt=""></div>
+    </div>
+  </header>
+
+  <div class="env-wrap" id="envWrap" role="button" tabindex="0" aria-label="Abrir o convite de casamento" aria-disabled="true">
+    <div class="envelope" id="envelope">
+      <div class="env-back liner-pattern"></div>
+
+      <!-- Bolso com o cartão -->
+      <div class="pocket" id="pocket">
+        <article class="card" id="card" aria-label="Convite: Emily e Augusto, 24 de julho de 2027">
+          <!-- A imagem enviada substitui a arte e o texto do cartão revelado pela animação. -->
+          <img class="card-image" src="assets/img/cartao/save-the-date-emily-augusto.jpeg" alt="Save the date de Emily e Augusto: sábado, 24 de julho de 2027, às 17h." decoding="async">
+        </article>
+      </div>
+
+      <!-- Painéis frontais -->
+      <div class="fp fp-left"><i></i></div>
+      <div class="fp fp-right"><i></i></div>
+      <div class="fp fp-bottom"><i></i></div>
+
+      <div class="stamp" aria-hidden="true">
+        <div class="perf"></div>
+        <div class="in">
+          <span class="val">2,50</span>
+          <div class="art" data-fb="stamp"><img data-art src="assets/img/convite/selo-postal.webp" alt=""></div>
+          <span class="ctry">Brasil</span>
+        </div>
+      </div>
+      <div class="postmark" aria-hidden="true">24 · JUL<br>2027</div>
+
+      <p class="env-to">Para você, com amor</p>
+      <p class="env-names">Emily &amp; Augusto · 24.07.2027</p>
+
+      <!-- Aba superior 3D -->
+      <div class="flap-shadow" id="flapShadow"><i></i></div>
+      <div class="flap" id="flap">
+        <div class="face outer"></div>
+        <div class="face inner"><div class="liner liner-pattern"></div></div>
+      </div>
+
+      <div class="art branch" id="branch" data-fb="branch"><img data-art src="assets/img/convite/ramo-lirio-pomba.webp" alt=""></div>
+
+      <!-- Selo de cera: mesma imagem duas vezes, recortada em linha irregular -->
+      <div class="seal" id="seal" aria-hidden="true">
+        <div class="half l" id="halfL"><div class="art seal-art"><img data-art src="assets/img/convite/selo-EA.webp" alt=""><div class="wax"><b>E&amp;A</b><em></em></div></div></div>
+        <div class="half r" id="halfR"><div class="art seal-art"><img data-art src="assets/img/convite/selo-EA.webp" alt=""><div class="wax"><b>E&amp;A</b><em></em></div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <p class="hint" id="hint" aria-live="polite"><span>Preparando o convite…</span></p>
+</section>
+
+<div class="card-layer" id="cardLayer"></div>
+<div class="after" id="after">
+  <button class="enter-btn" id="enterBtn" type="button"><span class="eb-fill" aria-hidden="true"></span><span class="eb-txt">Continuar</span></button>
+  <button class="replay" id="replay" type="button">Ver de novo</button>
+</div>
+</div><!-- /invite -->
+
+<div class="reveal-ring" id="revealRing" aria-hidden="true"></div>
+<div class="petals" id="petals" aria-hidden="true"></div>
+
+<!-- =====================================================
+     SITE (aparece depois do convite)
+     ===================================================== -->
+<div class="site" id="site" inert>
+  <div class="aura" aria-hidden="true"></div>
+
+  <!-- Navegação -->
+  <header class="nav-root" id="navRoot">
+    <nav class="nav" id="nav" aria-label="Seções do site">
+      <a class="nav-mono" href="#inicio" aria-label="Início">E&amp;A</a>
+      <div class="nav-links">
+        <a href="#historia">História</a>
+        <a href="#cerimonia">O grande dia</a>
+        <a href="#dresscode">Dress code</a>
+        <a href="#presentes">Presentes</a>
+        <a href="#duvidas">Dúvidas</a>
+      </div>
+      <a class="btn solid" href="#rsvp">Confirmar</a>
+      <button class="nav-burger" id="burger" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu"><i></i><i></i></button>
+      <span class="nav-prog" aria-hidden="true"></span>
+    </nav>
+    <div class="menu" id="menu">
+      <a href="#historia">Nossa história</a>
+      <a href="#cerimonia">O grande dia</a>
+      <a href="#dresscode">Dress code</a>
+      <a href="#presentes">Presentes</a>
+      <a href="#rsvp">Confirmar presença</a>
+      <a href="#duvidas">Dúvidas</a>
+      <button class="menu-small" type="button" data-back>Rever o convite</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="inicio">
+      <div class="hero-scene" aria-hidden="true">
+        <div class="hero-3d" id="hero3d">
+          <div class="hl wash b1"></div>
+          <div class="hl wash b2"></div>
+          <div class="hl wash b3"></div>
+          <div class="hl flora-l art" data-fb="bouquet"><img data-art loading="lazy" src="assets/img/convite/lirio-buque.webp" alt=""></div>
+          <div class="hl flora-r art" data-fb="bouquet"><img data-art loading="lazy" src="assets/img/convite/lirio-buque.webp" alt=""></div>
+        </div>
+      </div>
+      <div class="hero-content" id="heroContent">
+        <p class="eyebrow center" data-h>Nós vamos nos casar</p>
+        <h1 class="hero-names"><span class="hn">Emily</span><span class="hamp">&amp;</span><span class="hn">Augusto</span></h1>
+        <p class="hero-date" data-h>Sábado · 24 de julho de 2027 · Villa das Flores</p>
+        <div class="countdown" role="timer" aria-label="Contagem regressiva para o casamento">
+          <div class="cd"><span class="cd-num">00</span><span class="cd-lbl">Dias</span></div>
+          <div class="cd"><span class="cd-num">00</span><span class="cd-lbl">Horas</span></div>
+          <div class="cd"><span class="cd-num">00</span><span class="cd-lbl">Min</span></div>
+          <div class="cd"><span class="cd-num">00</span><span class="cd-lbl">Seg</span></div>
+        </div>
+        <div class="hero-cta" data-h>
+          <a class="btn solid" href="#rsvp">Confirmar presença</a>
+          <a class="btn" href="#presentes">Lista de presentes</a>
+        </div>
+      </div>
+      <a class="scroll-cue" href="#historia" data-h>Role para descobrir<i></i></a>
+    </section>
+
+    <!-- FAIXA ANIMADA -->
+    <div class="marquee" aria-hidden="true">
+      <div class="mq-track">
+        <div class="mq-item"><em>Emily</em><span class="mq-dot"></span><b>24 · 07 · 2027</b><span class="mq-dot"></span><em>Augusto</em><span class="mq-dot"></span><b>Villa das Flores</b><span class="mq-dot"></span>para sempre<span class="mq-dot"></span></div>
+        <div class="mq-item"><em>Emily</em><span class="mq-dot"></span><b>24 · 07 · 2027</b><span class="mq-dot"></span><em>Augusto</em><span class="mq-dot"></span><b>Villa das Flores</b><span class="mq-dot"></span>para sempre<span class="mq-dot"></span></div>
+      </div>
+    </div>
+
+    <!-- NOSSA HISTÓRIA -->
+    <section class="story" id="historia" aria-label="Nossa história">
+      <div class="story-pin">
+        <div class="story-track">
+          <div class="story-intro">
+            <p class="eyebrow" data-reveal>Nossa história</p>
+            <h2 class="h2">Como tudo começou</h2>
+            <p class="lead" data-reveal>Quatro capítulos, muitos cafés e uma certeza que só cresceu. Role para folhear o nosso álbum.</p>
+            <p class="hint-drag" data-reveal>Continue rolando<i></i></p>
+          </div>
+          <article class="chapter">
+            <div class="polaroid"><div class="photo art" data-fb="photo" data-year="2019" data-tone="1"><img data-art loading="lazy" src="assets/img/site/historia-1.webp" alt="Emily e Augusto em 2019"></div><p class="pol-cap">o primeiro café</p></div>
+            <div class="ch-text"><span class="ch-year" aria-hidden="true">2019</span><h3>Uma pergunta numa livraria</h3><p>Ela procurava um livro de poesia, ele fingiu saber onde ficava. O café depois durou a tarde inteira — e nenhum dos dois quis ir embora.</p></div>
+          </article>
+          <article class="chapter">
+            <div class="polaroid"><div class="photo art" data-fb="photo" data-year="2021" data-tone="2"><img data-art loading="lazy" src="assets/img/site/historia-2.webp" alt="Primeira viagem, 2021"></div><p class="pol-cap">a primeira viagem</p></div>
+            <div class="ch-text"><span class="ch-year" aria-hidden="true">2021</span><h3>Chuva na serra</h3><p>Um chalé, três dias de chuva e um quebra-cabeça de mil peças. Descobrimos que qualquer lugar fica bonito quando é a dois.</p></div>
+          </article>
+          <article class="chapter">
+            <div class="polaroid"><div class="photo art" data-fb="photo" data-year="2024" data-tone="3"><img data-art loading="lazy" src="assets/img/site/historia-3.webp" alt="O pedido, 2024"></div><p class="pol-cap">o pedido</p></div>
+            <div class="ch-text"><span class="ch-year" aria-hidden="true">2024</span><h3>Um jardim de lírios</h3><p>Ao pôr do sol, entre lírios brancos, Augusto se ajoelhou. Emily disse “sim” antes mesmo de ele terminar a pergunta.</p></div>
+          </article>
+          <article class="chapter">
+            <div class="polaroid"><div class="photo art" data-fb="photo" data-year="2027" data-tone="4"><img data-art loading="lazy" src="assets/img/site/historia-4.webp" alt="2027"></div><p class="pol-cap">o grande dia</p></div>
+            <div class="ch-text"><span class="ch-year" aria-hidden="true">2027</span><h3>O próximo capítulo</h3><p>Agora queremos você por perto para escrever a página mais bonita desta história. Guardamos um lugar especial para você.</p></div>
+          </article>
+        </div>
+        <div class="story-progress" aria-hidden="true"><i></i></div>
+      </div>
+    </section>
+
+    <!-- O GRANDE DIA -->
+    <section class="sec day" id="cerimonia">
+      <div class="wrap">
+        <p class="eyebrow" data-reveal>O grande dia</p>
+        <h2 class="h2">Cerimônia &amp; recepção</h2>
+        <p class="lead" data-reveal>Tudo acontece no mesmo lugar, entre jardins e uma estufa de vidro. Toque nos cartões para ver os detalhes.</p>
+
+        <div class="venues">
+          <div class="flip" role="button" tabindex="0" aria-pressed="false" aria-label="Cerimônia: ver detalhes" data-reveal>
+            <div class="flip-in">
+              <div class="flip-face flip-front">
+                <div class="orn" data-orn="3,3,70,92;3,3,58,55;3,3,54,128,0,0"></div>
+                <p class="v-type">Cerimônia</p>
+                <p class="v-time">16<sup>h</sup></p>
+                <p class="v-place">Jardim das Oliveiras</p>
+                <p class="v-hint"><i>↻</i>Toque para detalhes</p>
+              </div>
+              <div class="flip-face flip-back">
+                <h4>Cerimônia · 16h</h4>
+                <address>Villa das Flores<br>Estrada das Flores, 1200</address>
+                <p>Chegue a partir das 15h30. A cerimônia é ao ar livre, no gramado — e começa pontualmente.</p>
+                <div class="acts">
+                  <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Villa%20das%20Flores" target="_blank" rel="noopener">Como chegar</a>
+                  <a class="btn" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Casamento%20Emily%20%26%20Augusto&amp;dates=20270724T190000Z/20270725T040000Z&amp;location=Villa%20das%20Flores%2C%20Estrada%20das%20Flores%2C%201200&amp;details=Cerim%C3%B4nia%20%C3%A0s%2016h.%20Recep%C3%A7%C3%A3o%20%C3%A0s%2018h.%20Dress%20code%3A%20esporte%20fino." target="_blank" rel="noopener">Salvar na agenda</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flip" role="button" tabindex="0" aria-pressed="false" aria-label="Recepção: ver detalhes" data-reveal>
+            <div class="flip-in">
+              <div class="flip-face flip-front">
+                <div class="orn" data-orn="3,3,70,92;3,3,58,55;3,3,54,128,0,0"></div>
+                <p class="v-type">Recepção</p>
+                <p class="v-time">18<sup>h</sup></p>
+                <p class="v-place">Estufa de Vidro</p>
+                <p class="v-hint"><i>↻</i>Toque para detalhes</p>
+              </div>
+              <div class="flip-face flip-back">
+                <h4>Recepção · 18h</h4>
+                <address>Estufa de Vidro<br>no mesmo endereço</address>
+                <p>Jantar, pista de dança e uma mesa de doces que vale a viagem. Estacionamento com manobrista no local.</p>
+                <div class="acts">
+                  <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Villa%20das%20Flores" target="_blank" rel="noopener">Como chegar</a>
+                  <a class="btn" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Casamento%20Emily%20%26%20Augusto&amp;dates=20270724T190000Z/20270725T040000Z&amp;location=Villa%20das%20Flores%2C%20Estrada%20das%20Flores%2C%201200&amp;details=Cerim%C3%B4nia%20%C3%A0s%2016h.%20Recep%C3%A7%C3%A3o%20%C3%A0s%2018h.%20Dress%20code%3A%20esporte%20fino." target="_blank" rel="noopener">Salvar na agenda</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="schedule">
+          <div class="side">
+            <h3 data-reveal>Programação</h3>
+            <p data-reveal>Um dia inteiro para celebrar sem pressa. Os horários são aproximados, mas a alegria é garantida.</p>
+          </div>
+          <div class="tl"><span class="tl-line" aria-hidden="true"><i></i></span><ol>
+            <li><time>15h30</time><h4>Boas-vindas</h4><p>Limonada de lavanda e música ao vivo à sombra das oliveiras.</p></li>
+            <li><time>16h00</time><h4>Cerimônia</h4><p>O “sim”, os votos e muitas lágrimas de alegria (tragam lenço).</p></li>
+            <li><time>17h00</time><h4>Coquetel ao pôr do sol</h4><p>Fotos no jardim, drinks autorais e petiscos da estação.</p></li>
+            <li><time>19h00</time><h4>Jantar</h4><p>Menu de três tempos servido na Estufa de Vidro.</p></li>
+            <li><time>21h00</time><h4>Festa</h4><p>A pista abre com a nossa primeira dança — e só fecha quando a última pessoa quiser.</p></li>
+          </ol></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DRESS CODE -->
+    <section class="sec dress" id="dresscode">
+      <div class="orn" data-orn="3,3,74,92;3,3,62,55;3,3,58,128,0,0" aria-hidden="true"></div>
+      <div class="wrap dress-grid">
+        <div class="dress-copy">
+          <p class="eyebrow" data-reveal>Dress code</p>
+          <h2 class="h2">Esporte fino</h2>
+          <p class="dress-sub" data-reveal>no jardim</p>
+          <p class="lead" data-reveal>Queremos todo mundo elegante e confortável: a cerimônia é no gramado e a festa vai longe. Tons suaves combinam com o cenário.</p>
+
+          <div class="seg" id="dressSeg" data-i="0" role="group" aria-label="Sugestões de traje" data-reveal>
+            <span class="seg-pill" aria-hidden="true"></span>
+            <button type="button" aria-pressed="true">Para elas</button>
+            <button type="button" aria-pressed="false">Para eles</button>
+          </div>
+
+          <ul class="tips" data-for="0">
+            <li><span class="ti">I</span><div><b>Vestidos</b><span>Midi ou longos, em tecidos fluidos como seda, crepe ou linho.</span></div></li>
+            <li><span class="ti">II</span><div><b>Sapatos</b><span>Salto bloco, anabela ou sandálias baixas: o gramado agradece.</span></div></li>
+            <li><span class="ti">III</span><div><b>À noite</b><span>Um xale ou blazer leve para quando o sol se puser.</span></div></li>
+          </ul>
+          <ul class="tips" data-for="1" hidden>
+            <li><span class="ti">I</span><div><b>Terno</b><span>Em tons claros, areia ou azul. A gravata é opcional.</span></div></li>
+            <li><span class="ti">II</span><div><b>Sapatos</b><span>Couro ou camurça, com sola confortável para a pista.</span></div></li>
+            <li><span class="ti">III</span><div><b>Detalhes</b><span>Um lenço de bolso em sálvia ou blush fica perfeito nas fotos.</span></div></li>
+          </ul>
+
+          <div class="avoid" data-reveal>
+            <span class="lbl">Por favor, evite</span>
+            <s>branco e off-white</s><s>salto fino</s><s>preto total</s>
+          </div>
+            <p class="weather" data-reveal>Julho na serra: dias amenos e noites frescas. Leve um agasalho para a festa.</p>
+        </div>
+
+        <div class="fan-wrap">
+          <div class="fan" id="fan">
+            <button class="swatch" type="button" style="--c:#a9bd98" data-name="Sálvia" data-note="Combina com linho cru e acessórios dourados."><span class="sw-in"></span><span class="sw-tag"><b>Sálvia</b><small>#a9bd98</small></span></button>
+            <button class="swatch" type="button" style="--c:#9fb3cf" data-name="Azul sereno" data-note="Lindo em seda ou em ternos claros."><span class="sw-in"></span><span class="sw-tag"><b>Sereno</b><small>#9fb3cf</small></span></button>
+            <button class="swatch" type="button" style="--c:#f0d5d8" data-name="Blush" data-note="Delicado e romântico, ótimo para vestidos fluidos."><span class="sw-in"></span><span class="sw-tag"><b>Blush</b><small>#f0d5d8</small></span></button>
+            <button class="swatch" type="button" style="--c:#e6d9c0" data-name="Champanhe" data-note="Neutro elegante, sem se confundir com o branco."><span class="sw-in"></span><span class="sw-tag"><b>Champanhe</b><small>#e6d9c0</small></span></button>
+            <button class="swatch" type="button" style="--c:#6f8f5e" data-name="Musgo" data-note="Profundo, ótimo para gravatas e ternos."><span class="sw-in"></span><span class="sw-tag"><b>Musgo</b><small>#6f8f5e</small></span></button>
+          </div>
+          <p class="sw-info" id="swInfo" aria-live="polite"><b>Paleta sugerida</b><br>Toque em um tecido para ver a sugestão.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRESENTES -->
+    <section class="sec gifts" id="presentes">
+      <div class="wrap">
+        <div class="gifts-head">
+          <div>
+            <p class="eyebrow" data-reveal>Lista de presentes</p>
+            <h2 class="h2">Com carinho</h2>
+            <p class="lead" data-reveal>Sua presença já é o nosso maior presente. Se quiser nos mimar, escolha abaixo o que vai levar: assim ninguém repete e tudo chega com a sua cara.</p>
+          </div>
+          <div class="box-stage" aria-hidden="true">
+            <div class="box-glow" id="boxGlow"></div>
+            <div class="box-floor"></div>
+            <div class="box-float" id="boxFloat">
+              <div class="gbox" id="gbox">
+                <i class="gf f1"></i><i class="gf f2"></i><i class="gf f3"></i><i class="gf f4"></i><i class="gf f5"></i>
+                <div class="lid" id="lid">
+                  <i class="ls s1"></i><i class="ls s2"></i><i class="ls s3"></i><i class="ls s4"></i><i class="lt"></i>
+                  <i class="bw bw1"></i><i class="bw bw2"></i><i class="bw bw3"></i><i class="bw bw4"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="gift-bar">
+          <div class="chips" id="giftChips" role="group" aria-label="Filtrar presentes">
+            <button class="chip" type="button" data-f="all" aria-pressed="true">Todos</button>
+            <button class="chip" type="button" data-f="casa" aria-pressed="false">Casa</button>
+            <button class="chip" type="button" data-f="lua" aria-pressed="false">Lua de mel</button>
+            <button class="chip" type="button" data-f="exp" aria-pressed="false">Experiências</button>
+          </div>
+          <p class="gift-count" id="giftCount" aria-live="polite"></p>
+        </div>
+
+        <div class="gift-grid" id="giftGrid"></div>
+
+        <div class="my-gift" id="myGift" hidden aria-live="polite">
+          <span class="mg-seal" aria-hidden="true">E&amp;A</span>
+          <span id="mgText"></span>
+          <button class="chip" type="button" id="mgUndo">Desfazer</button>
+        </div>
+
+        <p class="pix-note" data-reveal>Prefere contribuir com um valor livre? Nossa chave PIX é <b>presente@emilyelucas.com.br</b>.</p>
+      </div>
+    </section>
+
+    <!-- RSVP -->
+    <section class="sec rsvp" id="rsvp">
+      <div class="wrap rsvp-grid">
+        <div class="rsvp-copy">
+          <p class="eyebrow" data-reveal>RSVP</p>
+          <h2 class="h2">Você vem?</h2>
+          <p class="lead" data-reveal>Confirme sua presença para prepararmos tudo com carinho: o seu lugar, o seu prato e a sua música.</p>
+          <div class="deadline" data-reveal><span class="dl-date">24·05</span><span class="dl-txt">Confirme até<br><span id="dlDays">—</span></span></div>
+        </div>
+
+        <div class="rsvp-card" id="rsvpCard" data-reveal>
+          <div class="rsvp-in">
+            <form class="rsvp-front" id="rsvpForm" novalidate>
+              <div class="fl"><input id="rName" name="name" placeholder=" " autocomplete="name" required><label for="rName">Nome completo</label></div>
+              <div class="fl"><input id="rContact" name="contact" placeholder=" " autocomplete="email"><label for="rContact">E-mail ou WhatsApp</label></div>
+              <div class="field">
+                <span class="f-lbl">Presença</span>
+                <div class="seg seg-wide" id="rSeg" data-i="0" role="group" aria-label="Presença">
+                  <span class="seg-pill" aria-hidden="true"></span>
+                  <button type="button" aria-pressed="true" data-v="sim">Vou com certeza</button>
+                  <button type="button" aria-pressed="false" data-v="nao">Não poderei ir</button>
+                </div>
+              </div>
+              <div class="more"><div>
+                <div class="field row"><span class="f-lbl">Acompanhantes</span>
+                  <div class="stepper" id="rStep"><button type="button" data-step="-1" aria-label="Menos um acompanhante">−</button><output id="rGuests" aria-live="polite">0</output><button type="button" data-step="1" aria-label="Mais um acompanhante">+</button></div>
+                </div>
+                <div class="field"><span class="f-lbl">Restrições alimentares</span>
+                  <div class="chips" id="rDiet">
+                    <label class="chip chip-check"><input type="checkbox" value="Vegetariano"><span>Vegetariano</span></label>
+                    <label class="chip chip-check"><input type="checkbox" value="Vegano"><span>Vegano</span></label>
+                    <label class="chip chip-check"><input type="checkbox" value="Sem glúten"><span>Sem glúten</span></label>
+                    <label class="chip chip-check"><input type="checkbox" value="Sem lactose"><span>Sem lactose</span></label>
+                  </div>
+                </div>
+                <div class="fl"><input id="rSong" name="song" placeholder=" "><label for="rSong">Uma música que não pode faltar</label></div>
+              </div></div>
+              <div class="fl"><textarea id="rMsg" name="msg" rows="2" placeholder=" "></textarea><label for="rMsg">Deixe um recado para os noivos</label></div>
+              <p class="err" id="rErr" role="alert"></p>
+              <button class="btn solid wide" type="submit">Enviar confirmação</button>
+            </form>
+            <div class="rsvp-back" aria-live="polite">
+              <div class="seal-mini" aria-hidden="true"><div class="wax"><b>E&amp;A</b><em></em></div></div>
+              <p class="eyebrow center">Confirmação recebida</p>
+              <h3 id="rbTitle">Obrigado!</h3>
+              <p id="rbText"></p>
+              <button class="btn" type="button" id="rEdit">Editar resposta</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DÚVIDAS -->
+    <section class="sec faq" id="duvidas">
+      <div class="wrap">
+        <p class="eyebrow center" data-reveal>Dúvidas</p>
+        <h2 class="h2 center" style="text-align:center">Perguntas frequentes</h2>
+        <div class="faq-list">
+          <div class="faq-item" data-reveal><button class="faq-q" type="button" aria-expanded="false">Posso levar acompanhante?<i aria-hidden="true"></i></button><div class="faq-a"><div><p>Os convites são nominais. Indique no RSVP quantas pessoas vêm com você; se tiver dúvida, fale com a gente pelo WhatsApp.</p></div></div></div>
+          <div class="faq-item" data-reveal><button class="faq-q" type="button" aria-expanded="false">Crianças são bem-vindas?<i aria-hidden="true"></i></button><div class="faq-a"><div><p>Claro! Teremos um espaço kids com monitoras durante a recepção, das 18h às 23h.</p></div></div></div>
+          <div class="faq-item" data-reveal><button class="faq-q" type="button" aria-expanded="false">Como chegar e onde estacionar?<i aria-hidden="true"></i></button><div class="faq-a"><div><p>A Villa das Flores tem estacionamento gratuito com manobrista. Também haverá transfer saindo do centro às 15h, com volta a partir das 23h.</p></div></div></div>
+          <div class="faq-item" data-reveal><button class="faq-q" type="button" aria-expanded="false">Onde me hospedar?<i aria-hidden="true"></i></button><div class="faq-a"><div><p>Negociamos tarifas especiais em duas pousadas a 5 minutos do local. Use o código EMILYELUCAS ao reservar.</p></div></div></div>
+          <div class="faq-item" data-reveal><button class="faq-q" type="button" aria-expanded="false">E se chover?<i aria-hidden="true"></i></button><div class="faq-a"><div><p>A cerimônia é no jardim, mas a Estufa de Vidro está preparada para receber todo mundo caso o céu não colabore.</p></div></div></div>
+          <div class="faq-item" data-reveal><button class="faq-q" type="button" aria-expanded="false">Até quando posso confirmar?<i aria-hidden="true"></i></button><div class="faq-a"><div><p>Até 24 de maio de 2027, pelo formulário acima. Depois disso fica difícil garantir o seu lugar à mesa.</p></div></div></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="f-flora l art" data-fb="bouquet" aria-hidden="true"><img data-art loading="lazy" src="assets/img/convite/lirio-buque.webp" alt=""></div>
+    <div class="f-flora r art" data-fb="bouquet" aria-hidden="true"><img data-art loading="lazy" src="assets/img/convite/lirio-buque.webp" alt=""></div>
+    <div class="coin-stage" aria-hidden="true">
+      <div class="coin" id="coin">
+        <div class="cf front"><div class="wax"><b>E&amp;A</b><em></em></div></div>
+        <div class="cf back"><div class="wax"><b>24·07·27</b></div></div>
+      </div>
+    </div>
+    <h2 class="h2">Até lá!</h2>
+    <p>Com amor, Emily &amp; Augusto</p>
+    <p class="hashtag">#EmilyEAugusto2027</p>
+    <button class="btn" type="button" data-back>Rever o convite</button>
+    <p class="foot-small">24 · 07 · 2027 · Villa das Flores</p>
+  </footer>
+
+  <div class="toast" id="toast" role="status"></div>
+</div>
+
+<!-- Modal: escolher presente -->
+<dialog class="modal" id="giftModal" aria-labelledby="gmTitle">
+  <form class="modal-card" id="giftForm" novalidate>
+    <div class="m-head">
+      <div class="g-wash" aria-hidden="true"></div>
+      <p class="eyebrow">Você escolheu</p>
+      <h3 id="gmTitle">Presente</h3>
+      <p class="m-price" id="gmPrice"></p>
+      <button class="m-close" type="button" data-close aria-label="Fechar"></button>
+    </div>
+    <div class="m-body">
+      <div class="field" id="gmQtyWrap">
+        <span class="f-lbl">Quantidade de cotas</span>
+        <div class="qty-row">
+          <div class="stepper" id="gmStep"><button type="button" data-step="-1" aria-label="Menos uma cota">−</button><output id="gmQty">1</output><button type="button" data-step="1" aria-label="Mais uma cota">+</button></div>
+          <span class="m-total" id="gmTotal"></span>
+        </div>
+      </div>
+      <fieldset class="field">
+        <legend>Como prefere presentear?</legend>
+        <div class="opts">
+          <label class="opt"><input type="radio" name="mode" value="dia" checked><span><b>Levo no dia</b><small>Entrego pessoalmente na festa</small></span></label>
+          <label class="opt"><input type="radio" name="mode" value="pix"><span><b>Via PIX</b><small>Transferência com recado</small></span></label>
+        </div>
+      </fieldset>
+      <div class="pix-box" id="gmPix" hidden><span>Chave PIX: <b>presente@emilyelucas.com.br</b></span><button class="chip" type="button" data-copy>Copiar</button></div>
+      <div class="field"><label for="gmName">Seu nome</label><input id="gmName" autocomplete="name" placeholder="Como você assina o cartão"></div>
+      <div class="field"><label for="gmMsg">Recado para os noivos <small>(opcional)</small></label><textarea id="gmMsg" rows="3" placeholder="Escreva algo carinhoso…"></textarea></div>
+      <p class="m-note" id="gmNote" hidden>Isso substitui o presente que você tinha escolhido antes.</p>
+      <p class="err" id="gmErr" role="alert"></p>
+      <div class="m-actions">
+        <button class="btn" type="button" data-close>Cancelar</button>
+        <button class="btn solid" type="submit">Confirmar presente</button>
+      </div>
+    </div>
+  </form>
+</dialog>
+
+
+<!-- GSAP alimenta as animações declaradas nos módulos JavaScript. -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Flip.min.js"></script>
+<!-- Ponto de entrada: consulte js/main.js para a ordem de inicialização. -->
+<script type="module" src="js/main.js"></script>
+</body>
+</html>

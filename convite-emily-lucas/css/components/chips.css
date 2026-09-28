@@ -1,0 +1,28 @@
+/* Filtros, seletores segmentados e controles de quantidade. */
+.chip{
+  font-family:var(--f-caps);font-weight:500;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;
+  padding:11px 17px;border-radius:999px;border:1px solid rgba(111,143,94,.35);background:transparent;color:var(--sage-d);
+  cursor:pointer;transition:background .35s,color .35s,border-color .35s,transform .35s;
+}
+.chip:hover{border-color:var(--sage);transform:translateY(-1px)}
+.chip[aria-pressed="true"]{background:#2f4636;color:#f6f1e6;border-color:#2f4636}
+.chip-check{position:relative;display:inline-flex}
+.chip-check input{position:absolute;opacity:0;pointer-events:none}
+.chip-check:has(input:checked){background:var(--blush);border-color:#d7a9b0;color:#2f4636}
+.chip-check:has(input:focus-visible){outline:2px solid var(--blue-d);outline-offset:3px}
+
+.seg{position:relative;display:inline-grid;grid-auto-flow:column;grid-auto-columns:1fr;padding:5px;border-radius:999px;
+  background:rgba(111,143,94,.1);border:1px solid rgba(111,143,94,.2)}
+.seg button{position:relative;z-index:1;border:0;background:none;cursor:pointer;border-radius:999px;
+  font-family:var(--f-caps);font-weight:500;font-size:11px;letter-spacing:.22em;text-transform:uppercase;
+  padding:13px 22px;color:var(--sage-d);transition:color .45s}
+.seg button[aria-pressed="true"]{color:#f6f1e6}
+.seg .seg-pill{position:absolute;top:5px;bottom:5px;left:5px;width:calc(50% - 5px);border-radius:999px;background:#2f4636;
+  box-shadow:0 6px 16px -6px rgba(47,70,54,.6);transition:translate .6s cubic-bezier(.5,0,.1,1)}
+.seg[data-i="1"] .seg-pill{translate:100% 0}
+.seg-wide{display:grid;width:100%}
+
+.stepper{display:inline-flex;align-items:center;border:1px solid rgba(111,143,94,.35);border-radius:999px;background:#fff}
+.stepper button{width:42px;height:42px;border:0;background:none;cursor:pointer;font-size:22px;line-height:1;color:#2f4636;border-radius:50%;transition:background .3s}
+.stepper button:hover{background:rgba(111,143,94,.12)}
+.stepper output{min-width:34px;text-align:center;font-size:21px;font-weight:500;color:#2f4636;font-variant-numeric:tabular-nums}

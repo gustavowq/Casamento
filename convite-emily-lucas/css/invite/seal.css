@@ -1,0 +1,87 @@
+/* Selo postal, carimbo, ramo e selo de cera. */
+/* Selo postal serrilhado (serrilha em CSS mask) */
+.stamp{
+  right:5%;top:17%;width:13.5%;aspect-ratio:4/5;z-index:5;
+  rotate:4deg;filter:drop-shadow(0 1px 1.5px rgba(70,60,40,.25));
+}
+.stamp .perf{
+  position:absolute;inset:0;background:#fbf9f4;
+  --t:calc(var(--ew) * .016);
+  -webkit-mask:
+    radial-gradient(closest-side,transparent 86%,#000 92%) calc(var(--t) / -2) calc(var(--t) / -2) / var(--t) var(--t) round,
+    linear-gradient(#000 0 0) calc(var(--t) / 2) calc(var(--t) / 2) / calc(100% - var(--t)) calc(100% - var(--t)) no-repeat;
+          mask:
+    radial-gradient(closest-side,transparent 86%,#000 92%) calc(var(--t) / -2) calc(var(--t) / -2) / var(--t) var(--t) round,
+    linear-gradient(#000 0 0) calc(var(--t) / 2) calc(var(--t) / 2) / calc(100% - var(--t)) calc(100% - var(--t)) no-repeat;
+}
+.stamp .in{
+  position:absolute;inset:calc(var(--ew)*.012);overflow:hidden;
+  background:linear-gradient(160deg,#f7ecec,#eef1f4);
+  border:1px solid rgba(111,143,94,.35);
+}
+.stamp .in .art{inset:4%}
+.stamp .val{position:absolute;left:6%;top:4%;font-family:var(--f-caps);font-size:calc(var(--ew)*.013);color:var(--sage-d);z-index:2}
+.stamp .ctry{text-transform:uppercase;position:absolute;right:6%;bottom:4%;font-family:var(--f-caps);font-size:calc(var(--ew)*.011);letter-spacing:.1em;color:var(--sage-d);z-index:2}
+
+/* Carimbo postal */
+.postmark{text-transform:uppercase;
+  left:65%;top:36%;width:15.5%;aspect-ratio:1;z-index:6;border-radius:50%;
+  border:max(1px,calc(var(--ew)*.003)) solid rgba(80,92,118,.55);
+  color:rgba(80,92,118,.7);rotate:-14deg;mix-blend-mode:multiply;
+  display:grid;place-content:center;text-align:center;
+  font-family:var(--f-caps);font-weight:500;font-size:calc(var(--ew)*.015);line-height:1.25;letter-spacing:.06em;
+  pointer-events:none;
+}
+.postmark::before{content:"";position:absolute;inset:11%;border-radius:50%;border:1px solid rgba(80,92,118,.45)}
+.postmark::after{ /* linhas onduladas de obliteração, passando sobre o selo */
+  --w:calc(var(--ew) * .026);
+  content:"";position:absolute;left:92%;top:26%;width:150%;height:48%;opacity:.8;
+  background:
+    radial-gradient(circle at 50% 100%,transparent 44%,rgba(80,92,118,.55) 46% 54%,transparent 56%) 0 0 / var(--w) calc(var(--w) / 2) repeat-x,
+    radial-gradient(circle at 50% 100%,transparent 44%,rgba(80,92,118,.55) 46% 54%,transparent 56%) 0 50% / var(--w) calc(var(--w) / 2) repeat-x,
+    radial-gradient(circle at 50% 100%,transparent 44%,rgba(80,92,118,.55) 46% 54%,transparent 56%) 0 100% / var(--w) calc(var(--w) / 2) repeat-x;
+}
+
+/* Ramo com pomba (sai de trás do selo) */
+.branch{left:44%;top:6%;width:44%;height:40%;z-index:9;transform-origin:10% 95%}
+
+/* Selo de cera: duas cópias da mesma imagem, cada uma recortada */
+.seal{
+  --s:calc(var(--ew) * .2);
+  width:var(--s);height:var(--s);
+  left:calc(50% - var(--s) / 2);top:calc(58% - var(--s) / 2);
+  z-index:10;filter:drop-shadow(0 calc(var(--ew)*.008) calc(var(--ew)*.01) rgba(20,40,25,.35));
+}
+.seal .half{position:absolute;inset:0}
+.seal .half.l{clip-path:polygon(0 0,53% 0,47% 14%,55% 30%,45% 46%,54% 61%,46% 76%,52% 89%,49% 100%,0 100%)}
+.seal .half.r{clip-path:polygon(53% 0,100% 0,100% 100%,49% 100%,52% 89%,46% 76%,54% 61%,45% 46%,55% 30%,47% 14%)}
+.seal .art{inset:0}
+.wax{
+  position:absolute;inset:0;
+  border-radius:48% 52% 51% 47% / 52% 47% 53% 48%;
+  background:
+    radial-gradient(circle at 34% 28%,rgba(255,255,255,.28),transparent 22%),
+    radial-gradient(circle at 50% 50%,#2c6139 0 48%,#1f4a2a 62%,#15361e 100%);
+  box-shadow:inset 0 0 0 calc(var(--ew)*.004) rgba(255,255,255,.06), inset calc(var(--ew)*-.006) calc(var(--ew)*-.008) calc(var(--ew)*.012) rgba(0,0,0,.35);
+}
+.seal-art .wax{display:none}
+.seal-art.missing .wax{display:block}
+.wax::before{ /* anel prensado */
+  content:"";position:absolute;inset:16%;border-radius:50%;
+  box-shadow:inset 0 1px 1px rgba(0,0,0,.45),0 1px 0 rgba(255,255,255,.14);
+}
+.wax b{
+  position:absolute;inset:0;display:grid;place-items:center;
+  font-family:var(--f-script);font-weight:400;font-size:calc(var(--s) * .3);color:#2a5c36;
+  text-shadow:0 -1px 0 rgba(0,0,0,.45),0 1px 0 rgba(255,255,255,.18);
+  padding-bottom:10%;
+}
+.wax em{ /* duas alianças prensadas na cera */
+  position:absolute;left:50%;bottom:20%;width:20%;aspect-ratio:1.6;translate:-50% 0;
+  background:
+    radial-gradient(circle at 32% 50%,transparent 26%,rgba(0,0,0,.3) 28% 36%,transparent 38%),
+    radial-gradient(circle at 68% 50%,transparent 26%,rgba(255,255,255,.14) 28% 36%,transparent 38%);
+}
+
+/* Lascas de cera */
+.wax-chip{position:absolute;z-index:11;background:radial-gradient(circle at 35% 30%,#3d7a4b,#1f4a2a 60%,#143220);pointer-events:none}

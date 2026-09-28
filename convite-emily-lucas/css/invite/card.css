@@ -1,0 +1,31 @@
+/* Cartão fotográfico que sai do bolso do envelope ao abrir o convite. */
+.card {
+  position: absolute;
+  width: calc(var(--ew) * .46);
+  aspect-ratio: 2 / 3;
+  left: calc(50% - var(--ew) * .23);
+  bottom: calc(var(--ew) * .035);
+  filter: drop-shadow(0 1px 1px rgba(45, 40, 32, .3)) drop-shadow(0 14px 22px rgba(45, 40, 32, .23));
+}
+
+.card.lifted {
+  left: 0;
+  top: 0;
+  bottom: auto;
+  transform-origin: 0 0;
+}
+
+.card-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.card-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  pointer-events: none;
+}

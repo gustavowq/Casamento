@@ -1,0 +1,36 @@
+/* Botões principais e ações do convite. */
+/* Botões depois de abrir o cartão */
+.after{
+  position:fixed;left:0;right:0;bottom:max(18px,env(safe-area-inset-bottom));z-index:45;
+  display:flex;justify-content:center;gap:10px;padding:0 16px;
+  visibility:hidden;opacity:0;
+}
+.enter-btn,.replay{
+  position:relative;overflow:hidden;cursor:pointer;
+  font-family:var(--f-caps);font-weight:500;font-size:12.5px;letter-spacing:.28em;text-transform:uppercase;
+  padding:1em 1.8em 1em 2.1em;border-radius:999px;
+  box-shadow:0 8px 22px rgba(70,60,40,.16);transition:background .3s,color .3s,transform .3s;
+}
+.enter-btn{background:#2f4636;color:#f6f1e6;border:1px solid #2f4636}
+.enter-btn .eb-fill{position:absolute;inset:0;background:linear-gradient(90deg,rgba(255,255,255,0),rgba(255,255,255,.24));transform-origin:0 50%;transform:scaleX(0)}
+.enter-btn .eb-txt{position:relative}
+.replay{color:var(--sage-d);background:rgba(251,248,241,.9);border:1px solid rgba(111,143,94,.55);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}
+.enter-btn:hover,.replay:hover{transform:translateY(-2px)}
+.replay:hover,.replay:focus-visible{background:var(--sage);color:#fff;outline:none}
+.enter-btn:focus-visible{outline:2px solid var(--blue-d);outline-offset:3px}
+@media (max-width:420px){.enter-btn,.replay{font-size:11px;letter-spacing:.2em;padding:1em 1.25em 1em 1.45em}}
+
+.btn{
+  position:relative;display:inline-flex;align-items:center;justify-content:center;gap:.7em;isolation:isolate;overflow:hidden;
+  font-family:var(--f-caps);font-weight:500;font-size:12px;line-height:1;letter-spacing:.26em;text-transform:uppercase;
+  padding:17px 26px 17px 30px;border-radius:999px;border:1px solid rgba(77,104,66,.5);
+  color:var(--sage-d);background:rgba(251,248,241,.6);text-decoration:none;cursor:pointer;
+  transition:transform .45s var(--ease-soft),box-shadow .45s,background .4s,color .4s,border-color .4s;
+}
+.btn::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.5) 50%,transparent 70%);translate:-130% 0;transition:translate .9s var(--ease-soft)}
+.btn:hover{transform:translateY(-2px);box-shadow:0 12px 26px -8px rgba(60,50,30,.22)}
+.btn:hover::after{translate:130% 0}
+.btn.solid{background:#2f4636;color:#f6f1e6;border-color:#2f4636}
+.btn.solid:hover{background:#3a5a44}
+.btn.wide{width:100%}
+.btn:focus-visible,.chip:focus-visible,.g-btn:focus-visible,.seg button:focus-visible,.faq-q:focus-visible,.flip:focus-visible{outline:2px solid var(--blue-d);outline-offset:3px}

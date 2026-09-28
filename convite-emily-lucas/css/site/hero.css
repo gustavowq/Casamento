@@ -1,0 +1,56 @@
+/* Capa e faixa animada. */
+/* =========================================================
+   11. HERO
+   ========================================================= */
+.hero{position:relative;min-height:100vh;min-height:100svh;display:grid;place-items:center;text-align:center;
+  padding:110px 20px 130px;overflow:clip;background:var(--cream)}
+.hero-scene{position:absolute;inset:0;perspective:1100px;pointer-events:none}
+.hero-3d{position:absolute;inset:-5%;transform-style:preserve-3d}
+.hl{position:absolute}
+.hero-3d .wash{mix-blend-mode:normal} /* blend + 3D recortava as camadas no Chrome */
+.hl.b1{left:6%;top:12%;width:44vmax;height:34vmax;transform:translateZ(-260px);--wb:34px;--wo:.55;
+  background:radial-gradient(closest-side,rgba(240,213,216,.95),transparent)}
+.hl.b2{right:2%;top:30%;width:40vmax;height:36vmax;transform:translateZ(-340px);--wb:40px;--wo:.5;
+  background:radial-gradient(closest-side,rgba(159,179,207,.9),transparent)}
+.hl.b3{left:30%;bottom:-6%;width:38vmax;height:26vmax;transform:translateZ(-200px);--wb:30px;--wo:.35;
+  background:radial-gradient(closest-side,rgba(111,143,94,.6),transparent)}
+.hl.flora-l{left:0;top:0;width:clamp(210px,34vw,500px);aspect-ratio:1;transform:translateZ(80px)}
+.hl.flora-r{right:0;bottom:0;width:clamp(210px,34vw,500px);aspect-ratio:1;transform:translateZ(80px) scale(-1,-1)}
+.hp{position:absolute;transform-style:preserve-3d}
+.hp .petal{position:relative;animation:floaty var(--d,9s) ease-in-out infinite alternate}
+@keyframes floaty{
+  0%{transform:translate3d(0,0,0) rotate(0) rotateX(0)}
+  100%{transform:translate3d(var(--dx,30px),var(--dy,-40px),0) rotate(140deg) rotateX(160deg)}
+}
+.hero-content{position:relative;z-index:2;max-width:1100px}
+.hero-names{font-family:var(--f-script);font-weight:400;font-size:clamp(78px,12vw,210px);line-height:.95;color:#2f4636;
+  margin:.1em 0 .12em;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;column-gap:.16em}
+.hero-names .hn{display:inline-block;padding:0 .14em}
+.hero-names .hamp{display:grid;place-items:center;width:.9em;aspect-ratio:1;border-radius:50%;
+  font-size:.52em;padding-top:.12em;color:var(--sage);border:1px solid rgba(111,143,94,.4);background:rgba(251,248,241,.5)}
+@media (max-width:640px){.hero-names{flex-direction:column;row-gap:.02em}.hero-names .hamp{font-size:.42em}}
+.hero-date{margin:0;font-family:var(--f-caps);font-weight:500;font-size:clamp(11.5px,.6vw + 8.5px,15px);letter-spacing:.32em;text-transform:uppercase;color:var(--sage-d);padding-left:.32em}
+.countdown{display:flex;justify-content:center;gap:clamp(8px,1.6vw,18px);margin:clamp(28px,4.5vh,44px) 0;perspective:700px}
+.cd{position:relative;width:clamp(68px,8.5vw,100px);padding:14px 0 12px;border-radius:16px;transform-style:preserve-3d;
+  background:linear-gradient(#fdfbf6,#f4eee2);border:1px solid rgba(111,143,94,.22);
+  box-shadow:inset 0 1px 0 #fff,0 16px 30px -14px rgba(60,50,30,.3)}
+.cd::before{content:"";position:absolute;left:10%;right:10%;top:44%;height:1px;background:rgba(111,143,94,.14)}
+.cd-num{display:block;font-family:var(--f-text);font-weight:500;font-size:clamp(34px,3.6vw,54px);line-height:1;color:var(--blue-d);font-variant-numeric:tabular-nums}
+.cd-lbl{display:block;margin-top:9px;font-family:var(--f-caps);font-weight:500;font-size:9.5px;letter-spacing:.24em;padding-left:.24em;text-transform:uppercase;color:var(--sage-d)}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.scroll-cue{position:absolute;z-index:2;bottom:24px;left:50%;translate:-50% 0;display:flex;flex-direction:column;align-items:center;gap:12px;
+  font-family:var(--f-caps);font-weight:500;font-size:9.5px;letter-spacing:.34em;text-transform:uppercase;color:var(--sage-d);text-decoration:none}
+.scroll-cue i{position:relative;width:1px;height:48px;overflow:hidden;background:rgba(111,143,94,.25)}
+.scroll-cue i::after{content:"";position:absolute;left:0;top:-40%;width:100%;height:40%;background:#2f4636;animation:cue 2.2s var(--ease-soft) infinite}
+@keyframes cue{to{top:110%}}
+
+/* =========================================================
+   12. MARQUEE
+   ========================================================= */
+.marquee{position:relative;z-index:2;overflow:hidden;padding:24px 0;background:var(--paper);border-block:1px solid rgba(111,143,94,.22)}
+.mq-track{display:flex;width:max-content}
+.mq-item{display:flex;align-items:center;gap:34px;padding-right:34px;white-space:nowrap;
+  font-family:var(--f-text);font-size:clamp(26px,3vw,42px);line-height:1;color:#2f4636}
+.mq-item em{font-family:var(--f-script);font-style:normal;font-size:1.3em;color:var(--sage)}
+.mq-item b{font-family:var(--f-caps);font-weight:500;font-size:.36em;letter-spacing:.32em;color:var(--sage-d)}
+.mq-dot{width:9px;height:9px;flex:none;rotate:45deg;background:var(--blush);border:1px solid rgba(111,143,94,.45)}
